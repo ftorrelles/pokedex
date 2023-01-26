@@ -31,11 +31,16 @@ const PokedexId = () => {
                         <div className="img-poke">
                             <img
                                 className="img2"
-                                src={selectPoke.sprites?.front_default}
+                                src={
+                                    selectPoke.sprites?.other?.dream_world
+                                        ?.front_default
+                                }
                                 alt=""
                             />
                         </div>
-                        <h3>{selectPoke.name}</h3>
+                        <h3>
+                            <strong>{selectPoke.name}</strong>
+                        </h3>
                         <div className="id">
                             <p>
                                 <strong># {id}</strong>
@@ -45,15 +50,32 @@ const PokedexId = () => {
                     <div className="item2">
                         <div className="type">
                             <h3>Type</h3>
+                            <ul>
+                                <li>{selectPoke?.types?.[0].type.name}</li>
+                                <li>{selectPoke?.types?.[1].type.name}</li>
+                            </ul>
                         </div>
                         <div className="abilities">
                             <h3>abilities</h3>
+                            <ul>
+                                <li>
+                                    {selectPoke?.abilities?.[0].ability.name}
+                                </li>
+                                <li>
+                                    {selectPoke?.abilities?.[1].ability.name}
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <div className="pokeInfo-2">
                     <div className="movements">
                         <h3>movements</h3>
+                        <ul>
+                            {selectPoke?.moves?.map((item, index) => (
+                                <li key={index}>{item?.move?.name}</li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </div>

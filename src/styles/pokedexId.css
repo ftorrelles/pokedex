@@ -3,7 +3,12 @@
     padding: 2rem 3rem;
 }
 .img1 {
-    width: 30%;
+    width: 15%;
+}
+
+ul {
+    text-align: start;
+    list-style: none;
 }
 .container-poke-info {
     display: grid;
@@ -17,21 +22,25 @@
     gap: 1rem;
 }
 .container-poke-info .pokeInfo-1 .item1 {
-    height: 250px;
+    height: 200px;
     background-color: rgb(116, 197, 114);
     padding: 1rem;
     position: relative;
+    border-radius: 5px;
 }
 .container-poke-info .pokeInfo-1 .item1 .img2 {
     position: absolute;
     display: flex;
-    width: 50%;
-    top: -200px;
-    left: 250px;
+    width: 30%;
+    top: -150px;
+    left: 290px;
 }
 .container-poke-info .pokeInfo-1 .item1 > h3 {
-    margin-top: 9rem;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 6rem;
 }
 .container-poke-info .pokeInfo-1 .item1 .id {
     text-align: center;
@@ -43,18 +52,24 @@
     text-align: center;
     gap: 1rem;
 }
-.container-poke-info .pokeInfo-1 .item2 .type {
-    background-color: rgb(116, 197, 114);
-    padding: 1rem;
-}
-
+.container-poke-info .pokeInfo-1 .item2 .type,
 .container-poke-info .pokeInfo-1 .item2 .abilities {
     background-color: rgb(116, 197, 114);
     padding: 1rem;
+    border-radius: 5px;
 }
+.container-poke-info .pokeInfo-1 .item2 .type > ul,
+.container-poke-info .pokeInfo-1 .item2 .abilities > ul {
+    text-align: start;
+    list-style: none;
+}
+
 .container-poke-info .pokeInfo-2 {
+    overflow-y: scroll;
+    max-height: 70vh;
     background-color: rgb(116, 197, 114);
-    margin: 5rem 0;
-    padding: 1rem;
+    margin: 2rem 0;
+    padding: 0.5rem;
     text-align: center;
+    border-radius: 5px;
 }
