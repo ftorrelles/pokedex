@@ -1,0 +1,63 @@
+.constainer_home {
+    position: relative;
+    max-height: 100vh;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    margin: 1rem 3rem;
+}
+/* image pokemons */
+img {
+    width: 100%;
+}
+.image1 {
+    width: 60%;
+    margin: 5rem 0 0 2rem;
+}
+.image2 {
+    width: 90%;
+}
+.images {
+    display: flex;
+}
+
+/* Forms */
+.form {
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 2rem;
+}
+.label-input-btn {
+    display: flex;
+    flex-direction: column;
+}
+.text {
+    margin-top: 10px;
+}
+
+.input-home {
+    padding-left: 10px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    background-color: #b6e2a1;
+    color: #fffcf5;
+    height: 40px;
+    width: 50%;
+}
+::placeholder {
+    color: #fffcf5;
+}
+.bt-input-home {
+    border: none;
+    background-color: transparent;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 40px;
+}
+
+.searchpoek {
+    width: 50px;
+    padding: 4px;
+}
