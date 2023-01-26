@@ -81,7 +81,10 @@ const PokemonCard = ({ url }) => {
             {/* <div className="pokemonCard"> */}
             <Link to={`/pokedex/${detail?.id}`}>
                 <div className="img-card">
-                    <img src={detail.sprites?.front_default} alt="" />
+                    <img
+                        src={detail.sprites?.other?.dream_world?.front_default}
+                        alt=""
+                    />
                 </div>
                 <h3 className="title-card">{detail?.name}</h3>
                 <h6 className="info-card">

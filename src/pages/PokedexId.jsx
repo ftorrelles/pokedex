@@ -23,7 +23,7 @@ const PokedexId = () => {
     return (
         <div className="container-pokeId">
             <div className="img-title">
-                <img className="img1" src="/poke-title.png" alt="" />
+                <img className="img-poke" src="/poke-title.png" alt="" />
             </div>
             <div className="container-poke-info">
                 <div className="pokeInfo-1">
@@ -51,18 +51,18 @@ const PokedexId = () => {
                         <div className="type">
                             <h3>Type</h3>
                             <ul>
-                                <li>{selectPoke?.types?.[0].type.name}</li>
-                                <li>{selectPoke?.types?.[1].type.name}</li>
+                                <li>{selectPoke?.types?.[0]?.type?.name}</li>
+                                <li>{selectPoke?.types?.[1]?.type?.name}</li>
                             </ul>
                         </div>
                         <div className="abilities">
                             <h3>abilities</h3>
                             <ul>
                                 <li>
-                                    {selectPoke?.abilities?.[0].ability.name}
+                                    {selectPoke?.abilities?.[0]?.ability?.name}
                                 </li>
                                 <li>
-                                    {selectPoke?.abilities?.[1].ability.name}
+                                    {selectPoke?.abilities?.[1]?.ability?.name}
                                 </li>
                             </ul>
                         </div>
