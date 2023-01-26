@@ -10,11 +10,11 @@ img {
     width: 100%;
 }
 .image1 {
-    width: 60%;
+    width: 150%;
     margin: 5rem 0 0 2rem;
 }
 .image2 {
-    width: 90%;
+    width: 80%;
 }
 .images {
     display: flex;
