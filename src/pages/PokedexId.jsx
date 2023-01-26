@@ -23,9 +23,41 @@ const PokedexId = () => {
     return (
         <div className="container-pokeId">
             <div className="img-title">
-                <img src="/poke-title.png" alt="" />
+                <img className="img1" src="/poke-title.png" alt="" />
             </div>
-            <img src={selectPoke.sprites?.front_default} alt="" />
+            <div className="container-poke-info">
+                <div className="pokeInfo-1">
+                    <div className="item1">
+                        <div className="img-poke">
+                            <img
+                                className="img2"
+                                src={selectPoke.sprites?.front_default}
+                                alt=""
+                            />
+                        </div>
+                        <h3>{selectPoke.name}</h3>
+                        <div className="id">
+                            <p>
+                                <strong># {id}</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div className="item2">
+                        <div className="type">
+                            <h3>Type</h3>
+                        </div>
+                        <div className="abilities">
+                            <h3>abilities</h3>
+                        </div>
+                    </div>
+                </div>
+                <div className="pokeInfo-2">
+                    <div className="movements">
+                        <h3>movements</h3>
+                    </div>
+                </div>
+            </div>
+
             {isVisible && (
                 <div className="container_popUp">
                     <div className="popUp">
