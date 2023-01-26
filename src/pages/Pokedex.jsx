@@ -53,10 +53,23 @@ const Pokedex = () => {
     const [page, setPage] = useState(1);
     const pokePerPage = 10;
     const lastIndex = page * pokePerPage;
-    const fistIndex = lastIndex - pokePerPage;
+    const firstIndex = lastIndex - pokePerPage;
 
-    const PokePagination = pokemons?.slice(fistIndex, lastIndex);
+    const PokePagination = pokemons?.slice(firstIndex, lastIndex);
     const totalPages = Math.ceil(pokemons.length / pokePerPage);
+
+    // const pagesPerBlock = 3;
+    // const currentBlock = Math.ceil(page / pagesPerBlock);
+    // const maxBlock = Math.ceil(totalPages / pagesPerBlock);
+    // const initialPage = (currentBlock - 1) * pagesPerBlock + 1;
+
+    // const finalPage =
+    //     maxBlock === currentBlock ? totalPages : currentBlock * pagesPerBlock;
+    // const pagesNumbers = [];
+    // for (let i = initialPage; i <= finalPage; i++) {
+    //     pagesNumbers.push(i);
+    // }
+
     const pagesNumbers = [];
     for (let i = 1; i <= totalPages; i++) {
         pagesNumbers.push(i);
@@ -161,28 +174,45 @@ const Pokedex = () => {
                     {1}
                 </Pagination.Item>
                 <Pagination.Ellipsis />
+                <Pagination.Item active>{page}</Pagination.Item>
+                {/* ---------- */}
+                <Pagination.Ellipsis />
                 <Pagination.Item
                     onClick={() =>
                         page === 1 ? setPage(page) : setPage(page - 1)
                     }
+                    // onClick={() =>
+                    //     page === totalPages
+                    //         ? setPage(page - 2)
+                    //         : setPage(page - 1)
+                    // }
                 >
                     {page === 1 ? page : page - 1}
+                    {/* {page === totalPages ? page - 2 : page - 1} */}
                 </Pagination.Item>
                 <Pagination.Item
-                    active
                     onClick={() =>
                         page === 1 ? setPage(page + 1) : setPage(page)
                     }
+                    // onClick={() =>
+                    //     page === totalPages ? setPage(page - 1) : setPage(page)
+                    // }
                 >
                     {page === 1 ? page + 1 : page}
+                    {/* {page === totalPages ? page - 1 : page} */}
                 </Pagination.Item>
                 <Pagination.Item
                     onClick={() =>
                         page === 1 ? setPage(page + 2) : setPage(page + 1)
                     }
+                    // onClick={() =>
+                    //     page === totalPages ? setPage(page) : setPage(page + 1)
+                    // }
                 >
                     {page === 1 ? page + 2 : page + 1}
+                    {/* {page === totalPages ? page : page + 1} */}
                 </Pagination.Item>
+                {/* --------- */}
                 <Pagination.Ellipsis />
                 <Pagination.Item onClick={() => setPage(totalPages)}>
                     {totalPages}

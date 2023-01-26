@@ -16,7 +16,7 @@ const PokedexId = () => {
     useEffect(() => {
         axios
             .get(`https://pokeapi.co/api/v2/pokemon/${id}`)
-            .then((resp) => (setSelectPoke(resp.data), console.log(resp.data)))
+            .then((resp) => setSelectPoke(resp.data))
             .catch(() => toggle());
     }, [id]);
     console.log(selectPoke);
@@ -29,42 +29,61 @@ const PokedexId = () => {
                 <div className="pokeInfo-1">
                     <div className="item1">
                         <div className="img-poke">
-                            <img
-                                className="img2"
-                                src={
-                                    selectPoke.sprites?.other?.dream_world
-                                        ?.front_default
-                                }
-                                alt=""
-                            />
+                            {selectPoke.sprites?.other?.dream_world
+                                ?.front_default ? (
+                                <img
+                                    className="img2"
+                                    src={
+                                        selectPoke.sprites?.other?.dream_world
+                                            ?.front_default
+                                    }
+                                    alt=""
+                                />
+                            ) : (
+                                <img className="img2" src="/error.png" alt="" />
+                            )}
                         </div>
+                        <hr />
                         <h3>
                             <strong>{selectPoke.name}</strong>
                         </h3>
                         <div className="id">
+                            <div className="weight-height">
+                                {selectPoke.weight}
+                                <p>
+                                    <strong>weight</strong>
+                                </p>
+                            </div>
+
                             <p>
                                 <strong># {id}</strong>
                             </p>
+                            <div className="weight-height">
+                                {selectPoke.height}
+                                <p>
+                                    <strong>height</strong>
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <div className="item2">
                         <div className="type">
                             <h3>Type</h3>
-                            <ul>
-                                <li>{selectPoke?.types?.[0]?.type?.name}</li>
-                                <li>{selectPoke?.types?.[1]?.type?.name}</li>
-                            </ul>
+                            <div className="type-abilities">
+                                <p>{selectPoke?.types?.[0]?.type?.name}</p>
+                                <p>{selectPoke?.types?.[1]?.type?.name}</p>
+                            </div>
                         </div>
                         <div className="abilities">
                             <h3>abilities</h3>
-                            <ul>
-                                <li>
+                            <div className="type-abilities">
+                                <p>
                                     {selectPoke?.abilities?.[0]?.ability?.name}
-                                </li>
-                                <li>
+                                </p>
+                                <p>
                                     {selectPoke?.abilities?.[1]?.ability?.name}
-                                </li>
-                            </ul>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
