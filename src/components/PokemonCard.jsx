@@ -78,7 +78,6 @@ const PokemonCard = ({ url }) => {
     // const nameType = Object.keys(detail?.types?.[0]).slice(1);
     return (
         <div className={componentsClassName}>
-            {/* <div className="pokemonCard"> */}
             <Link to={`/pokedex/${detail?.id}`}>
                 <div className="img-card">
                     {detail.sprites?.other?.dream_world?.front_default ? (

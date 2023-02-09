@@ -23,7 +23,7 @@ ul {
 }
 .container-poke-info .pokeInfo-1 .item1 {
     height: 240px;
-    background-color: rgb(116, 197, 114);
+    background-color: #ffcd05a4;
     padding: 5rem 1rem 1rem 1rem;
     position: relative;
     border-radius: 5px;
@@ -70,7 +70,7 @@ ul {
 }
 .container-poke-info .pokeInfo-1 .item2 .type,
 .container-poke-info .pokeInfo-1 .item2 .abilities {
-    background-color: rgb(116, 197, 114);
+    background-color: #ffcd05a4;
     padding: 1rem;
     border-radius: 5px;
 }
@@ -93,7 +93,7 @@ ul {
 .container-poke-info .pokeInfo-2 {
     overflow-y: scroll;
     max-height: 70vh;
-    background-color: rgb(116, 197, 114);
+    background-color: #ffcd05a4;
     margin: 2rem 0;
     padding: 0.5rem;
     text-align: center;
@@ -108,4 +108,46 @@ ul {
     height: 40px;
     margin-bottom: 5px;
     background-color: rgba(255, 255, 255, 0.301);
+}
+
+@media (max-width: 1100px) {
+    .container-pokeId {
+        padding: 2rem 1rem;
+    }
+}
+@media (max-width: 992px) {
+    .container-pokeId {
+        padding: 1rem 1rem;
+    }
+    .container-poke-info {
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 1rem;
+    }
+    .container-poke-info .pokeInfo-2 {
+        margin: 0 0 2rem 0;
+        padding: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    .container-poke-info .pokeInfo-1 .item1 .img2 {
+        top: -80px;
+        left: 200px;
+    }
+    .img-poke {
+        width: 25%;
+    }
+}
+@media (max-width: 490px) {
+    .container-poke-info .pokeInfo-1 .item1 .img2 {
+        top: -60px;
+        left: 150px;
+    }
+    .img-poke {
+        width: 30%;
+    }
+    .container-poke-info .pokeInfo-1 .item2 {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 0 5rem 0;
+    }
 }

@@ -11,7 +11,7 @@ img {
 }
 .img1 {
     width: 50%;
-    margin: 5rem 0 0 2rem;
+    margin: 2rem 0 0 2rem;
 }
 .image2 {
     width: 80%;
@@ -60,4 +60,24 @@ img {
 .searchpoek {
     width: 50px;
     padding: 4px;
+}
+@media (max-width: 768px) {
+    .constainer_home {
+        grid-template-columns: 100%;
+        margin: 5rem 1rem;
+    }
+    .img1 {
+        width: 30%;
+        display: flex;
+        margin: 0 6rem;
+    }
+    .input-home {
+        width: 80%;
+    }
+    .image2 {
+        width: 60%;
+    }
+    .images {
+        display: flex;
+    }
 }

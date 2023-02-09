@@ -289,3 +289,24 @@ select {
     display: flex;
     justify-content: center;
 }
+@media (max-width: 1200px) {
+    .container-pokemonCard {
+        padding: 1rem 2rem;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 992px) {
+    .container-pokemonCard {
+        padding: 1rem 2rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .container-pokemonCard {
+        padding: 1rem 1rem;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .img-card {
+        width: 40%;
+    }
+}

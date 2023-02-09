@@ -45,9 +45,6 @@ const Pokedex = () => {
     const submit = (data) => {
         const pokeSelect = data.pokeName.toLowerCase().trim();
         navigate(`/pokedex/${pokeSelect}`);
-        // setPokemons([
-        //     { url: `https://pokeapi.co/api/v2/pokemon/${pokeSelect}/` },
-        // ]);
     };
     //pagination
     const [page, setPage] = useState(1);
@@ -58,30 +55,10 @@ const Pokedex = () => {
     const PokePagination = pokemons?.slice(firstIndex, lastIndex);
     const totalPages = Math.ceil(pokemons.length / pokePerPage);
 
-    // const pagesPerBlock = 3;
-    // const currentBlock = Math.ceil(page / pagesPerBlock);
-    // const maxBlock = Math.ceil(totalPages / pagesPerBlock);
-    // const initialPage = (currentBlock - 1) * pagesPerBlock + 1;
-
-    // const finalPage =
-    //     maxBlock === currentBlock ? totalPages : currentBlock * pagesPerBlock;
-    // const pagesNumbers = [];
-    // for (let i = initialPage; i <= finalPage; i++) {
-    //     pagesNumbers.push(i);
-    // }
-
     const pagesNumbers = [];
     for (let i = 1; i <= totalPages; i++) {
         pagesNumbers.push(i);
     }
-
-    // const paginationBtn1 = () => {
-    //     if (page === 1) {
-    //         page;
-    //     } else {
-    //         page - 1;
-    //     }
-    // };
 
     return (
         <div className="containerPokedex">
@@ -147,24 +124,6 @@ const Pokedex = () => {
                 ))}
             </section>
 
-            {/* ---btns pagination */}
-            {/* <div className="btn-pagination">
-                <button disabled={page === 1} onClick={() => setPage(page - 1)}>
-                    anterior
-                </button>
-                {pagesNumbers?.map((num) => (
-                    <button key={num} onClick={() => setPage(num)}>
-                        {num}
-                    </button>
-                ))}
-
-                <button
-                    disabled={page === totalPages}
-                    onClick={() => setPage(page + 1)}
-                >
-                    siguiente
-                </button>
-            </div> */}
             <Pagination className="btn-pagination">
                 <Pagination.Prev
                     onClick={() => setPage(page - 1)}
